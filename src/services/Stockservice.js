@@ -4,7 +4,7 @@ async function apiFetch(endpoint, options = {}) {
     const response = await fetch(`${BASE_URL}${endpoint}`, {
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrYXVzaGlrMSIsImlhdCI6MTc4MTEwMjgxOCwiZXhwIjoxNzgxMTg5MjE4fQ.plB8SdRNubxPdXrT7Hx6Y8-xHwO2XiicuTM-jthKzak",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrYXVzaGlrMSIsImlhdCI6MTc4MTUzNTQwMSwiZXhwIjoxNzgxNjIxODAxfQ.vrEsg1tyLZxGYQZHMaJfRd1TTsy6Mf5HcIJS24IgyRg",
             ...options.headers,
         },
         ...options,
@@ -20,7 +20,8 @@ async function apiFetch(endpoint, options = {}) {
 
 
 export async function getAllStocks(){
-    return apiFetch("/stock");
+    // return apiFetch("/stock");
+    return apiFetch("/stock/gainers");
 }
 
 

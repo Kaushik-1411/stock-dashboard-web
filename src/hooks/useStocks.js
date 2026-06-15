@@ -30,7 +30,11 @@ export function useStocks(){
                     getTopGainers(),
                     getTopLosers(),
                 ]);
-                setStocks(all);
+
+                // console.log("top gainer:", top);
+                console.log("all =", all);
+console.log("all.active =", all.active);
+                setStocks(all || []);
                 setGainers(top);
                 setLosers(bottom);
             } catch {
