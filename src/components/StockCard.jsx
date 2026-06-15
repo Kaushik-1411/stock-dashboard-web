@@ -38,7 +38,7 @@ export default function StockCard({stock, onClick}){
                         padding: "2px 8px",
                         borderRadius: 20,
                     }}>
-                        {positive ? "+" : ""}{stock.changePct.toFixed(2)}%
+                        {positive ? "+" : ""}{stock.changePercent}%
                     </span>
                 </div>
                 <div style={{ color: COLORS.textSecondary, fontSize: 12, marginBottom: 8}}>

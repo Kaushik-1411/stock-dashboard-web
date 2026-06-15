@@ -29,6 +29,12 @@ export default function SearchPage({
     const isSearching = query.trim().length > 0;
     const displayList = isSearching ? searchResults : stocks;
 
+    console.log("stocks:", stocks);
+console.log("gainers:", gainers);
+console.log("losers:", losers);
+console.log("searchResults:", searchResults);
+console.log("displayList:", displayList);
+
     return (
         <div style={{ padding: "0 24px 40px"}}>
 
@@ -75,6 +81,8 @@ export default function SearchPage({
             </div>
 
 
+
+
             {isSearching ? (
                 <>
                 <div style={{color: COLORS.textSecondary, fontSize: 13, marginBottom: 16}}>
@@ -100,6 +108,8 @@ export default function SearchPage({
                             border: `1px solid ${COLORS.border}`,
                             borderRadius: 12,
                             padding: 20,
+                            height: '400px',
+                            overflowX: 'auto',
                         }}>
                             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16}}>
                                 {section.positive ? (
@@ -137,7 +147,7 @@ export default function SearchPage({
                                    <div style={{ textAlign: "right"}}>
                                         <div style={{ color: COLORS.text, fontWeight: 600, fontSize: 14}}>${s.price.toFixed(2)}</div>
                                         <div style={{ color: section.positive ? COLORS.teal : COLORS.red, fontSize: 12, fontWeight: 500}}>
-                                            {section.positive ? "+" : ""}{s.changePct.toFixed(2)}%
+                                            {section.positive ? "+" : ""}{Number(s.changePercent || 0).toFixed(2)}%
                                         </div>
                                     </div>
                                 </div>
